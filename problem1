@@ -1,0 +1,39 @@
+create database college;
+use college;
+create table college_individual(
+   id int primary key auto_increment not null,
+   name varchar(45),
+   email varchar(256),
+   mentor_id int
+);
+describe college_individual;
+insert into college_individual(name,email) values("Mayank Pathak","mayank@gmail.com");
+insert into college_individual(name,email,mentor_id) values("Ankit Chaudhary","ankit@outlook.com",1);
+insert into college_individual(name,email,mentor_id) values("Vijay Saini","vijay@gmail.com",null);
+insert into college_individual(name,email,mentor_id) values("Harish Solanki","harish@outlook.com",1);
+insert into college_individual(name,email,mentor_id) values("Nitin Chauhan","chauhannitin@outlook.com",null);
+insert into college_individual(name,email,mentor_id) values("Sagar Kaimwal","sagarkaimwal.com",5);
+insert into college_individual(name,email,mentor_id) values("Himanshu Namdev","himanshu@gmail.com",5);
+insert into college_individual(name,email,mentor_id) values("Tushar Bohra","tushar@coloredcow.com",null);
+insert into college_individual(name,email,mentor_id) values("Khushi Sharma","khushi@outlook.com",8);
+insert into college_individual(name,email,mentor_id) values("Devina","devina@outlook.com",8);
+insert into college_individual(name,email,mentor_id) values("Ashu Saini","ashu@outlook.com",8);
+insert into college_individual(name,email,mentor_id) values("Virat Kohli","virat@outlook.com",null);
+insert into college_individual(name,email,mentor_id) values("Sumit Saini","sumitsaini@gmail.com",11);
+insert into college_individual(name,email,mentor_id) values("chetan","chetan@outlook.com",1);
+insert into college_individual(name,email,mentor_id) values("Himanshu Chauhan","himanshuchauhan@gmail.com",1);
+insert into college_individual(name,email,mentor_id) values("Sara","sara@outlook.com",1);
+insert into college_individual(name,email,mentor_id) values("Ujwal","ujwal@outlook.com",5);
+insert into college_individual(name,email,mentor_id) values("Vaibhav Gupta","vaibhav@outlook.com",11);
+insert into college_individual(name,email,mentor_id) values("Ankita Chaudhary","ankita@outlook.com",15);
+insert into college_individual(name,email,mentor_id) values("Sudhanshu Shah","sudhanshu@outlook.com",5);
+
+
+select name as mentees from college_individual where mentor_id is not null order by name;
+
+select a.name as mentee , b.name as mentor from college_individual a,college_individual b where a.mentor_id=b.id;
+
+select name as mentee from college_individual where mentor_id is not null and email regexp 'gmail.com'; 
+
+
+select * from college_individual;
