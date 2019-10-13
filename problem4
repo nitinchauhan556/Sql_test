@@ -1,0 +1,3 @@
+select customer_id,seller_id,date,amount from sales where seller_id in (
+select id from seller where gender='female') and customer_id in (select id from customer where(
+year(now())-year(date_of_birth))>35);
